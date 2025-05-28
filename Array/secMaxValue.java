@@ -1,11 +1,11 @@
 public class secMaxValue {
     public static void main(String[] args) {
         int arr[] = {4, 3, 7, 2, 3, 10, 1, 18};
-        secMax(arr);
+        System.out.println(secMax(arr));
     }
 
-    public static void secMax(int[] arr) {
-        int sMax = 0;
+    public static int secMax(int[] arr) {
+        int sMax = Integer.MIN_VALUE;
         int max = arr[0];
 
         for(int i=1; i<arr.length; i++) {
@@ -17,6 +17,9 @@ public class secMaxValue {
             }
         }
 
-        System.err.print("Max: "+max+" | "+"Sec-Max: "+sMax);
+        //If sec are not changed
+        if (sMax == Integer.MIN_VALUE) return -1;
+
+        return sMax;
     }
 }
