@@ -17,7 +17,7 @@ public class secMaxValue {
             }
         }
 
-        //If sec are not changed
+        //If sec-max value is not changed
         if (sMax == Integer.MIN_VALUE) return -1;
 
         return sMax;
