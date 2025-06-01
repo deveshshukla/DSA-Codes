@@ -1,10 +1,13 @@
 public class reverseArr {
     public static void main(String[] args) {
         int arr[] = {2, 3, 7, 4, 10, 1, 18};
-        revArr(arr);
+        
+        for (int i : revArr(arr)) {
+            System.out.print(i+" ");
+        }
     }
 
-    public static void revArr(int[] arr) {
+    public static int[] revArr(int[] arr) {
         int start = 0;
         int end = arr.length-1;
 
@@ -17,8 +20,6 @@ public class reverseArr {
             end--;
         }
 
-        for(int i=0; i<arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
+        return arr;
     }
 }
