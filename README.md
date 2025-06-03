@@ -37,5 +37,5 @@ Each folder or file includes:
 
 💬 Connect with Me
 I'm documenting this journey publicly — let’s connect!
-📌 LinkedIn ([add your link here](https://www.linkedin.com/in/devesh-kumar-shukla/))
+📌 LinkedIn ([link](https://www.linkedin.com/in/devesh-kumar-shukla/))
 📁 YouTube - CS with Dev
