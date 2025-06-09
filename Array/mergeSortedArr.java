@@ -9,24 +9,53 @@ public class mergeSortedArr {
     }
 
     public static int[] mergeArr(int[] arr1, int[] arr2) {
-        int pointer1 = 0;
-        int pointer2 = 0;
+        int p1 = 0;
+        int p2 = 0;
 
         int arr3[] = new int[arr1.length+arr2.length];
 
-        try {
-            for(int i=0; i<arr3.length; i++) {
-                if (arr1[pointer1] < arr2[pointer2]) {
-                    arr3[i] = arr1[pointer1];
-                    pointer1++;
+        int idx=0;
+
+        if (arr1.length < arr2.length) {
+            while (p1 < arr1.length) {
+                if (arr1[p1] < arr2[p2]) {
+                    arr3[idx] = arr1[p1];
+                    p1++;
                 }else {
-                    arr3[i] = arr2[pointer2];
-                    pointer2++;
+                    arr3[idx] = arr2[p2];
+                    p2++;
                 }
+
+                idx++;
             }
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("Exception: "+e);
+        } else {
+            while (p2 < arr2.length) {
+                if (arr1[p1] < arr2[p2]) {
+                    arr3[idx] = arr1[p1];
+                    p1++;
+                }else {
+                    arr3[idx] = arr2[p2];
+                    p2++;
+                }
+
+                idx++;
+            }
+        }
+        
+
+        //Copy remaining elements into arr3
+        if (arr1.length > arr2.length) {
+            while (p1 < arr1.length) {
+                arr3[idx] = arr1[p1];
+                p1++;
+                idx++;
+            }
+        }else {
+           while (p2 < arr2.length) {
+                arr3[idx] = arr2[p2];
+                p2++;
+                idx++;
+            } 
         }
 
         return arr3;
