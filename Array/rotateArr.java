@@ -10,27 +10,31 @@ public class rotateArr {
 
             int k = sc.nextInt();
 
-            rotateArrByK(arr, k);
+            //Print new k rotated array
+            for (int i : rotateArrByK(arr, k)) {
+                System.out.print(i+" ");
+            }
         }
     }
 
-    public static void rotateArrByK(int arr[], int k) {
+    public static int[] rotateArrByK(int arr[], int k) {
         //New arr
         int newArr[] = new int[arr.length];
 
-        for(int i=k, j=0; i<arr.length; i++,j++) {
-            // Copy k-index array element to new arr
-            newArr[j] = arr[i];
+        try {
+            for(int i=k, j=0; i<arr.length; i++,j++) {
+                // Copy k-index array element to new arr
+                newArr[j] = arr[i];
+            }
+
+            for(int j=arr.length-k, i=0; j<arr.length; j++, i++) {
+                // Copy remaining elements
+                newArr[j] = arr[i];
+            }
+        } catch (Exception e) {
+            System.err.println("handle exception: out of bound exception");
         }
 
-        for(int j=arr.length-k, i=0; j<arr.length; j++, i++) {
-            // Copy remaining elements
-            newArr[j] = arr[i];
-        }
-
-        //Print new k rotated array
-        for (int i : newArr) {
-            System.out.print(i+" ");
-        }
+        return newArr;
     }
 }
