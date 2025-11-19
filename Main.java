@@ -6,22 +6,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // Input
-        int arr[] = {2,3,1,4};
+        int g = sc.nextInt();
+        int c = sc.nextInt();
+        int l = sc.nextInt();
 
-        // logic
-        boolean needLoop = true;
+        // Logic
+        int arr[] = {g,c,l};
+        Arrays.sort(arr);
 
-        while (needLoop) {
-            for(int i=0; i<arr.length; i++) {
-                if (arr[i]%2 == 0) {
-                    if (arr[i+1]%2 != 0) {
-                        if (arr[i]>arr[i+1]) {
-                            //perform swap
-                            
-                        }
-                    }
-                }
-            }
-        }
+        if (arr[2] - arr[0] >= 10) {
+            System.out.println("check again");
+        }else
+            System.out.println("final "+arr[1]);
     }
 }
