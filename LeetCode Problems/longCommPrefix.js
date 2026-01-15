@@ -8,13 +8,12 @@ var longestCommonPrefix = function(strs) {
     // Sort array lexicographically/dictionary : (log n)
     strs.sort((a,b) => a.localeCompare(b));
 
-    if (strs[0][0] != strs[n][0]) return "";
-
     // compare first & last elements char
     for (let i=0; i<strs[0].length; i++) {
-        if (strs[0][i] == strs[n][i]) {
+        if (strs[0][i] != strs[n][i]) {
+            break;
+        }else 
             longCommPrefix += strs[0][i];
-        }
     }
 
     return longCommPrefix;
